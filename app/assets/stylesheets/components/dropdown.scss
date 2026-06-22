@@ -72,9 +72,20 @@
     .main-username-button,
     .about-button {
         position: relative;
+        display: flex;
+        align-items: center;
         cursor: pointer;
+
         &:hover {
-            color: whitesmoke;
+            color: $link-yellow;
+        }
+
+        &:hover .nav-pill {
+            color: $link-yellow;
+        }
+
+        &:hover .nav-pill::after {
+            transform: scaleX(1);
         }
     }
 }

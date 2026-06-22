@@ -23,16 +23,18 @@
     .main-header {
         // font-family: "Source Sans Pro", sans-serif;
         font-family: 'Open Sans';
-        width: min(1180px, calc(100vw - 32px));
+        width: min(1360px, calc(100vw - 40px));
 
         font-weight: 600;
 
         display: grid;
-        grid-template-columns: 25% 43% 32%;
+        grid-template-columns: minmax(220px, auto) minmax(320px, 1fr) auto;
+        column-gap: 28px;
         background-color: $header-red;
         color: $header-text-grey;
         text-align: center;
         height: 96px;
+        align-items: center;
         transition: height 200ms ease, background-color 200ms ease;
 
         .logo-container {
@@ -90,16 +92,21 @@
 
         .main-header-nav {
             text-transform: uppercase;
-            // margin-left: 50px;
             color: $header-text-grey;
             display: flex;
             align-items: center;
             font-weight: 500;
-            justify-content: flex-start;
+            justify-content: center;
             font-size: 14px;
+            min-width: 0;
 
             .nav-pill {
                 position: relative;
+                display: inline-flex;
+                align-items: center;
+                min-height: 28px;
+                line-height: 1;
+                padding: 0 2px;
                 color: $header-text-grey;
                 transition: color 180ms ease;
 
@@ -117,7 +124,7 @@
                 }
 
                 &.active {
-                    color: whitesmoke;
+                    color: $link-yellow;
 
                     &::after {
                         transform: scaleX(1);
@@ -128,18 +135,26 @@
             >ul {
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
 
                 >li {
+                    display: flex;
+                    align-items: center;
                     margin: 0 10px;
                     padding: 0;
                     text-align: center;
 
                     >a {
                         position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        min-height: 28px;
+                        line-height: 1;
                         transition: color 180ms ease;
 
                         &:hover {
-                            color: whitesmoke;
+                            color: $link-yellow;
                         }
 
                         &::after {
@@ -160,7 +175,7 @@
                         }
 
                         &.active-link {
-                            color: whitesmoke;
+                            color: $link-yellow;
 
                             &::after {
                                 transform: scaleX(1);
@@ -174,9 +189,12 @@
         .right-main-header {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
             font-size: 11px;
             font-weight: 400;
             gap: 10px;
+            min-width: 0;
+            flex-wrap: nowrap;
 
             .admin-shortcut {
                 height: 28px;
@@ -198,13 +216,15 @@
 
             .install-button {
                 margin: 0;
-                padding: 0 12px;
+                padding: 0 14px;
                 width: auto;
+                min-width: fit-content;
                 height: 28px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
+                white-space: nowrap;
                 color: $lighter-grey;
                 cursor: pointer;
                 border-radius: 999px;
@@ -232,6 +252,7 @@
 
             .loggedIn-right-header {
                 display: flex;
+                align-items: center;
 
                 .envelope {
                     height: 28px;
@@ -265,11 +286,13 @@
 
             .loggedOut-right-header {
                 display: flex;
+                align-items: center;
                 margin-top: 0;
 
                 a {
                     margin: 0 5px;
                     height: fit-content;
+                    white-space: nowrap;
 
                     &:hover {
                         color: whitesmoke;

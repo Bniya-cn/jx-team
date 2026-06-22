@@ -21,17 +21,17 @@ body {
     .homepage {
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
         justify-content: center;
-        gap: 24px;
+        gap: 28px;
         position: relative;
-        width: min(1220px, calc(100vw - 32px));
+        width: min(1360px, calc(100vw - 40px));
 
         .main-content {
             display: flex;
             flex-direction: column;
             flex: 1;
             min-width: 0;
-            margin-right: 50px;
         }
     }
 }
@@ -117,12 +117,6 @@ body {
             .sidebar {
                 position: static;
             }
-        }
-    }
-
-    .header-container {
-        .main-header {
-            margin-left: 200px;
         }
     }
 }

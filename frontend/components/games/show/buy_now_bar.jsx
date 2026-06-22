@@ -114,15 +114,15 @@ class BuyNowBar extends React.Component {
                     <div className="price-box">
                         <p>{getPriceLabel(game, '¥', locale)}</p>
                     </div>
-                    <Link to={this.props.currentUserId ? "/cart" : "/login"}>
+                    <Link className="cart-link" to={this.props.currentUserId ? "/cart" : "/login"}>
                         <div className={this.state.cartConfirmed ? 'cart-box confirmed' : 'cart-box'} onClick={this.addToCart}>
-                            <p>{cartLabel}</p>
+                            <span className="action-label">{cartLabel}</span>
                         </div>
                     </Link>
                     <div
                         className={this.state.inWishlist ? 'wishlist-box active' : 'wishlist-box'}
                         onClick={this.toggleWishlist}>
-                        <p>{wishlistLabel}</p>
+                        <span className="action-label">{wishlistLabel}</span>
                     </div>
                 </div>
             </div>

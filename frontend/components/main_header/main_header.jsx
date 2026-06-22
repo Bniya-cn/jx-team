@@ -81,7 +81,7 @@ class MainHeader extends React.Component {
                                 <HeaderDropDownContainer
                                     buttonName={'store-button'}
                                     hasHover={true}
-                                    titleItem={<p className={storeTitleClass}>{t('nav_store', locale)}</p>}
+                                    titleItem={<span className={storeTitleClass}>{t('nav_store', locale)}</span>}
                                     listItems={[
                                         <Link to="/">{t('nav_home', locale)}</Link>,
                                         <Link to="/discover" data-place="left">
@@ -106,7 +106,7 @@ class MainHeader extends React.Component {
                                 <HeaderDropDownContainer
                                     buttonName={'community-button'}
                                     hasHover={true}
-                                    titleItem={<p className={communityTitleClass}>{t('nav_community', locale)}</p>}
+                                    titleItem={<span className={communityTitleClass}>{t('nav_community', locale)}</span>}
                                     listItems={[
                                         <Link to="/">{t('nav_home', locale)}</Link>,
                                         <Link to="/activity" data-place="left">
@@ -165,7 +165,7 @@ class MainHeader extends React.Component {
                                 <HeaderDropDownContainer
                                     buttonName="about-button"
                                     hasHover={true}
-                                    titleItem={<p className={aboutTitleClass}>{t('nav_about', locale)}</p>}
+                                    titleItem={<span className={aboutTitleClass}>{t('nav_about', locale)}</span>}
                                     listItems={[
                                         <Link to="/about">
                                             <i className="fas fa-info-circle"></i> {t('nav_about_project', locale)}
