@@ -1,0 +1,76 @@
+.buy-now-bar {
+    margin-top: 50px;
+    margin-left: 15px;
+    width: 650px;
+    position: relative;
+    transition: transform 220ms cubic-bezier(0.19, 1, 0.22, 1);
+
+    .main-box {
+        display: flex;
+        justify-content: space-between;
+        color: whitesmoke;
+        background-color: $review-box-red;
+        border-radius: 8px;
+        padding-bottom: 20px;
+        box-shadow: 0 24px 44px rgba(19, 7, 7, 0.26);
+        .title {
+            font-size: 20px;
+            background-color: transparent;
+            padding: 15px;
+        }
+        .icons {
+            display: flex;
+            padding: 15px 10px;
+            background-color: transparent;
+            font-size: 17px;
+
+            .fa-windows {
+                margin: 0 5px;
+            }
+            .fa-apple {
+                margin: 0 5px;
+            }
+        }
+    }
+    .black-box {
+        position: absolute;
+        border: 3px solid black;
+        display: flex;
+        font-size: 15px;
+        right: 15px;
+        bottom: -15px;
+        border-radius: 3px;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+        .price-box {
+            background-color: black;
+            color: $lighter-grey;
+            padding: 5px 10px;
+        }
+        .cart-box,
+        .wishlist-box {
+            background-image: linear-gradient(to right, rgb(255, 187, 77), $button-orange);
+            color: whitesmoke;
+            text-shadow: 1px 1px $background-dark-grey;
+            padding: 5px 10px;
+            filter: brightness(90%);
+            transition: transform 180ms cubic-bezier(0.19, 1, 0.22, 1), filter 180ms ease, color 180ms ease,
+                background-image 180ms ease;
+            &:hover {
+                cursor: pointer;
+                filter: brightness(110%);
+                transform: translateY(-1px);
+            }
+        }
+        .cart-box.confirmed {
+            background-image: linear-gradient(to right, #f7ce67, #c89a2d);
+            color: #261102;
+            filter: brightness(100%);
+        }
+        .wishlist-box {
+            background-image: linear-gradient(to right, #4c6b8a, #2a475e);
+        }
+        .wishlist-box.active {
+            background-image: linear-gradient(to right, #5d88ad, #355b79);
+        }
+    }
+}

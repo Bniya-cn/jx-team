@@ -1,0 +1,91 @@
+.browse-page {
+    .browse-header {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(233, 232, 230, 0.08);
+        margin-bottom: 18px;
+
+        h2 {
+            color: #fff;
+            margin: 8px 0;
+        }
+
+        .browse-count {
+            color: #8f98a0;
+        }
+    }
+
+    .browse-list {
+        list-style: none;
+        padding: 0;
+        max-width: 616px;
+        margin: 0;
+    }
+
+    // 浏览页复用列表项，但不在 .index-container 内，需单独限制图片尺寸
+    .browse-list .games-index-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        min-height: 100px;
+        padding: 8px 0;
+        background-color: $gradient-start-red;
+        border-radius: 8px;
+        border: 1px solid rgba(233, 232, 230, 0.06);
+        transition: transform 220ms cubic-bezier(0.19, 1, 0.22, 1), box-shadow 220ms ease,
+            border-color 220ms ease;
+
+        &:hover {
+            transform: translateX(4px);
+            border-color: rgba(255, 205, 22, 0.35);
+            box-shadow: 0 18px 36px rgba(16, 7, 7, 0.22);
+        }
+
+        .games-index-item-left {
+            display: flex;
+            width: calc(100% - 100px);
+
+            .titleCard-box {
+                width: 180px;
+                min-width: 180px;
+                height: 69px;
+                border-radius: 6px;
+                overflow: hidden;
+
+                img {
+                    width: 180px;
+                    height: 69px;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+
+            .games-index-item-words {
+                margin-left: 12px;
+
+                h4 {
+                    margin: 0;
+                    color: $lighter-grey;
+                    font-size: 14px;
+                }
+
+                p {
+                    font-size: 12px;
+                    margin: 4px 0 0;
+                }
+            }
+        }
+
+        .games-index-item-price {
+            display: flex;
+            align-items: center;
+            padding-right: 12px;
+            color: $lighter-grey;
+            font-size: 14px;
+        }
+    }
+
+    .browse-empty {
+        color: #8f98a0;
+        padding: 20px 0;
+    }
+}

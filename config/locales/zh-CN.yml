@@ -1,0 +1,76 @@
+zh-CN:
+  activerecord:
+    attributes:
+      user:
+        username: 用户名
+        email: 邮箱
+        password: 密码
+        password_digest: 密码
+        session_token: 会话令牌
+      game:
+        title: 标题
+        price: 价格
+        publisher: 发行商
+        developer: 开发商
+        release_date: 发行日期
+      review:
+        author: 作者
+        author_id: 作者
+        game: 游戏
+        game_id: 游戏
+      purchase:
+        buyer: 购买者
+        buyer_id: 购买者
+        game: 游戏
+        game_id: 游戏
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: 不能为空
+              taken: 已被占用
+            email:
+              blank: 不能为空
+              taken: 已被占用
+            password:
+              too_short: 太短（至少 %{count} 个字符）
+            password_digest:
+              blank: 不能为空
+            session_token:
+              blank: 不能为空
+        game:
+          attributes:
+            title:
+              blank: 不能为空
+            price:
+              blank: 不能为空
+            publisher:
+              blank: 不能为空
+            developer:
+              blank: 不能为空
+            release_date:
+              blank: 不能为空
+        review:
+          attributes:
+            author:
+              blank: 不能为空
+            author_id:
+              blank: 不能为空
+              taken: 已评论过该游戏
+            game:
+              blank: 不能为空
+            game_id:
+              blank: 不能为空
+              must_own: 必须拥有该游戏才能发表评论
+        purchase:
+          attributes:
+            buyer:
+              blank: 不能为空
+            buyer_id:
+              blank: 不能为空
+              taken: 已购买过该游戏
+            game:
+              blank: 不能为空
+            game_id:
+              blank: 不能为空

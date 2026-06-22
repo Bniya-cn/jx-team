@@ -1,0 +1,215 @@
+.featured-carousel-outer-div {
+    // margin-top: 115px;
+
+    margin-left: 20px;
+    position: relative;
+
+    h2 {
+        font-size: 14px;
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-family: 'Open Sans';
+    }
+
+    >div {
+        display: flex;
+    }
+
+    .left-arrow {
+        position: absolute;
+        font-size: 46px;
+        z-index: 0;
+        top: 150px;
+        left: -45px;
+        color: whitesmoke;
+        background-image: linear-gradient(to right, $gradient-start-red, rgb(126, 48, 48));
+
+        .fa-chevron-left {
+            padding: 25px 10px;
+        }
+
+        transition: transform 220ms cubic-bezier(0.19, 1, 0.22, 1),
+        filter 220ms ease;
+
+        &:hover {
+            background-image: linear-gradient(to right, $index-detail-red, rgb(126, 48, 48));
+            cursor: pointer;
+            transform: translateX(-2px);
+        }
+    }
+
+    .right-arrow {
+        position: absolute;
+        font-size: 46px;
+        z-index: 0;
+        top: 150px;
+        right: -45px;
+        color: whitesmoke;
+        background-image: linear-gradient(to left, $gradient-start-red, rgb(126, 48, 48));
+
+        .fa-chevron-right {
+            padding: 25px 5px;
+        }
+
+        transition: transform 220ms cubic-bezier(0.19, 1, 0.22, 1),
+        filter 220ms ease;
+
+        &:hover {
+            cursor: pointer;
+            background-image: linear-gradient(to left, $index-detail-red, rgb(126, 48, 48));
+            transform: translateX(2px);
+        }
+    }
+
+    .active {
+        display: block;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .bottom-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 7px;
+
+        .button-active {
+            width: 15px;
+            height: 9px;
+            background-color: $index-detail-red;
+            margin: 3px;
+            border-radius: 3px;
+            transition: transform 180ms ease, filter 180ms ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.08);
+            }
+        }
+
+        .button-inactive {
+            width: 15px;
+            height: 9px;
+            background-color: rgb(171, 77, 77);
+            margin: 3px;
+            border-radius: 3px;
+            transition: transform 180ms ease, filter 180ms ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .featured-carousel-inner-div {
+        display: flex;
+        background-color: $header-red;
+        color: whitesmoke;
+        border: 1px solid $header-red;
+        z-index: 2;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 24px 48px rgba(17, 7, 7, 0.35);
+        transition: transform 260ms cubic-bezier(0.19, 1, 0.22, 1), box-shadow 260ms ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 30px 58px rgba(17, 7, 7, 0.45);
+        }
+
+        .big-image {
+            z-index: 2;
+            box-shadow: 5px -1px 8px black;
+
+            img {
+                width: 616px;
+                height: 345px;
+                z-index: 2;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .featured-right-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 315px;
+            z-index: 1;
+            box-shadow: 3px -1px 10px black;
+
+            .title {
+                text-transform: none;
+                font-size: 24px;
+                margin-top: 20px;
+                margin-left: 15px;
+            }
+
+            .four-pic-box {
+                // border: 1px solid white;
+                z-index: 1;
+                position: relative;
+                left: -20px;
+                top: 0;
+
+                width: fit-content;
+                height: fit-content;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 50% 50%;
+
+                .screenshot-div {
+                    margin: 5px;
+
+                    img {
+                        width: 160px;
+                        height: 69px;
+                        filter: brightness(80%);
+                        transition: transform 220ms cubic-bezier(0.19, 1, 0.22, 1), filter 220ms ease;
+
+                        &:hover {
+                            filter: brightness(100%);
+                            transform: translateY(-2px);
+                        }
+                    }
+                }
+            }
+
+            .recommended {
+                margin-left: 15px;
+                font-size: 20px;
+                height: 50px;
+
+                div {
+                    font-size: 10px;
+                    width: fit-content;
+                    background-color: $review-box-red;
+                    padding: 3px;
+                    margin-top: 3px;
+                    border-radius: 3px;
+                }
+            }
+
+            .featured-bottom-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                p {
+                    margin-left: 15px;
+                    font-size: 12px;
+                    height: fit-content;
+                    color: $lighter-grey;
+                }
+
+                .fa-windows {
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}

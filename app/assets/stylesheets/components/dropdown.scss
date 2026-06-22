@@ -1,0 +1,102 @@
+.header-drop-down {
+    position: relative;
+    // 宽度随菜单文字收缩，下拉才能与触发项左对齐
+    display: inline-block;
+    text-align: left;
+
+    .logout-button {
+        font-family: 'Open Sans';
+        font-size: 11px;
+    }
+    .active {
+        box-shadow: 2px 2px 2px $gradient-end-red;
+        display: block;
+        width: 150px;
+        z-index: 10;
+        position: absolute;
+        top: 30px;
+        text-align: left;
+        ul {
+            li:first-child {
+                padding-top: 10px;
+            }
+            li {
+                padding: 5px 10px;
+                &:hover {
+                    color: whitesmoke;
+                }
+            }
+            li:last-child {
+                padding-bottom: 10px;
+            }
+            .yellow-text {
+                color: $link-yellow;
+            }
+        }
+    }
+    // 顶栏导航下拉：与触发文字左对齐（适配中英文不同宽度）
+    .store-button + div.active,
+    .community-button + div.active,
+    .about-button + div.active,
+    .main-username-button + div.active {
+        left: 0;
+        right: auto;
+        font-size: 12px;
+    }
+    .main-username-button + div.active {
+        width: 100px;
+    }
+    // 右侧用户菜单下拉：右对齐
+    .username-button + div.active {
+        right: 0;
+        left: auto;
+    }
+    .username-dropdown {
+        margin: 5px 0;
+        cursor: pointer;
+        &:hover {
+            color: whitesmoke;
+        }
+        .fa-caret-down {
+            padding-top: 2px;
+            margin: 3px;
+            font-size: 14px;
+        }
+    }
+    .hidden {
+        display: none;
+    }
+
+    .store-button,
+    .community-button,
+    .main-username-button,
+    .about-button {
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            color: whitesmoke;
+        }
+    }
+}
+.library-dropdown {
+    position: relative;
+    width: 90px;
+    .active {
+        display: block;
+        font-size: 10px;
+        background-color: $index-detail-red;
+        padding: 5px 10px;
+        position: absolute;
+        width: 120px;
+        top: 27px;
+        filter: brightness(100%);
+        box-shadow: 0 0 5px black;
+        &:hover {
+            background-color: $gradient-mid-red;
+            color: whitesmoke;
+        }
+    }
+    .hidden {
+        display: none;
+    }
+}

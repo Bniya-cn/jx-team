@@ -1,0 +1,31 @@
+.news-page {
+    h2 {
+        color: #fff;
+        margin-bottom: 16px;
+    }
+
+    .news-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .news-card {
+        background: #1b2838;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+
+        .news-date {
+            color: #8f98a0;
+            font-size: 12px;
+        }
+
+        h3 a {
+            color: #66c0f4;
+            text-decoration: none;
+        }
+
+        a {
+            color: #66c0f4;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+.sidebar {
+    width: 210px;
+    flex-shrink: 0;
+
+    .giftcards-pic {
+        width: 150px;
+        height: 120px;
+        position: relative;
+        padding: 30px 30px 0 30px;
+
+        .img {
+            background-color: transparent;
+            height: 100px;
+        }
+
+        .sidebar-logo {
+            position: absolute;
+            bottom: 5px;
+            text-align: center;
+            font-size: 20px;
+            right: 10px;
+
+            .logo {
+                background-color: whitesmoke;
+                border-radius: 100%;
+                width: 45px;
+                height: 45px;
+                position: relative;
+                margin: auto;
+
+                .fa-cogs {
+                    font-size: 24px;
+                    position: absolute;
+                    top: 11px;
+                    left: 7px;
+                }
+            }
+
+            h4 {
+                padding: 0 20px;
+                margin: 0;
+                width: 150px;
+                color: whitesmoke;
+                background-image: linear-gradient(to bottom, rgba(113, 37, 37, 0), rgba(113, 37, 37, 0.8));
+            }
+        }
+    }
+
+    >ul {
+        margin-left: 15px;
+
+        font-size: 12px;
+        padding: 5px;
+        padding-left: 0px;
+
+        li {
+            color: $link-yellow;
+            padding: 5px;
+
+            &:first-child {
+                color: whitesmoke;
+                text-transform: uppercase;
+            }
+
+            &:hover {
+                color: whitesmoke;
+            }
+        }
+    }
+
+    .giftCard-list {
+        border-top: 1px solid $link-yellow;
+    }
+}

@@ -1,0 +1,42 @@
+.wishlist-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #c6d4df;
+
+    h2 {
+        margin-bottom: 16px;
+    }
+
+    .wishlist-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .wishlist-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px solid #2a475e;
+
+        img {
+            width: 120px;
+            height: auto;
+        }
+
+        a {
+            flex: 1;
+            color: #66c0f4;
+            text-decoration: none;
+        }
+
+        button {
+            background: #2a475e;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+    }
+}

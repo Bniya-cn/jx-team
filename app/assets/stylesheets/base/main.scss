@@ -1,0 +1,158 @@
+body {
+    background-color: rgb(28, 12, 10);
+    font-family: 'Duru Sans', sans-serif;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-body-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 48px;
+
+    .homepage {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+        position: relative;
+        width: min(1220px, calc(100vw - 32px));
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+            margin-right: 50px;
+        }
+    }
+}
+
+.route-stage {
+    animation: page-enter 380ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: top center;
+}
+
+.stage-panel {
+    opacity: 0;
+    animation: section-rise 520ms var(--ease-out-expo) forwards;
+    animation-delay: var(--enter-delay, 0ms);
+}
+
+.stagger-list {
+    >.stagger-item {
+        opacity: 0;
+        animation: section-rise 460ms var(--ease-out-quart) forwards;
+        animation-delay: calc(var(--stagger-offset, 0ms) + (var(--stagger-index, 0) * 55ms));
+    }
+}
+
+@keyframes page-enter {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes section-rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes soft-fade {
+    from {
+        opacity: 0;
+        transform: scale(1.015);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        scroll-behavior: auto;
+    }
+
+    .route-stage {
+        animation: none;
+    }
+
+    .stage-panel,
+    .stagger-list>.stagger-item,
+    .detail-stage-image {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media only screen and (max-width: 1281px) and (max-height: 800px) {
+    .main-body-section {
+        .homepage {
+            display: flex;
+
+            .sidebar {
+                position: static;
+            }
+        }
+    }
+
+    .header-container {
+        .main-header {
+            margin-left: 200px;
+        }
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .main-body-section {
+        height: 100vh;
+
+        .login-form {
+            grid-template-columns: 50% 50%;
+
+            .right-login-section {
+                align-items: flex-start;
+
+                .right-side {
+                    margin-left: 100px;
+                }
+            }
+        }
+
+        .signup-form {
+            grid-template-columns: 60% 40%;
+        }
+
+        .game-show-page {
+            height: 100vh;
+
+            .background-image {
+                height: 100vh;
+            }
+        }
+    }
+}

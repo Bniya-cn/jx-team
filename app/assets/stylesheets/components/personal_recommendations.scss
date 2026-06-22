@@ -1,0 +1,151 @@
+.personal-recommendations-container {
+    margin-left: 20px;
+    margin-top: 35px;
+    position: relative;
+
+    .rec-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        h2 {
+            font-size: 14px;
+            color: whitesmoke;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+        }
+
+        .see-more-btn {
+            font-size: 11px;
+            color: #a3a2a0;
+            border: 1px solid rgba(163, 162, 160, 0.45);
+            padding: 4px 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 200ms ease;
+
+            &:hover {
+                color: whitesmoke;
+                border-color: whitesmoke;
+                transform: translateY(-1px);
+            }
+        }
+    }
+
+    .recommendations-row {
+        display: flex;
+        gap: 16px;
+        width: 100%;
+
+        @media only screen and (max-width: 900px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (max-width: 500px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .rec-card {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 0; // Prevent flex item overflow
+        background-color: #1b2838;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        overflow: hidden;
+        text-decoration: none;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+        transition: transform 250ms var(--ease-out-expo), box-shadow 250ms ease, border-color 250ms ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+            border-color: rgba(255, 205, 22, 0.3);
+
+            .image-box img {
+                transform: scale(1.05);
+            }
+        }
+
+        .image-box {
+            position: relative;
+            width: 100%;
+            height: 110px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 350ms ease;
+            }
+
+            .card-discount-badge {
+                position: absolute;
+                bottom: 8px;
+                right: 8px;
+                background-color: #4c6b22;
+                color: #beee11;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 6px;
+                border-radius: 2px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+        }
+
+        .card-info {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            background: linear-gradient(135deg, #1b2838 0%, #15202e 100%);
+
+            h4 {
+                color: #e9e8e6;
+                font-size: 13px;
+                margin: 0 0 4px 0;
+                font-weight: normal;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .card-genre {
+                color: #707e8a;
+                font-size: 11px;
+                margin: 0 0 12px 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .card-price-row {
+                display: flex;
+                align-items: baseline;
+                gap: 8px;
+                justify-content: flex-end;
+                margin-top: auto;
+
+                .card-original-price {
+                    color: #707e8a;
+                    text-decoration: line-through;
+                    font-size: 10px;
+                }
+
+                .card-current-price {
+                    color: #acdbf5;
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
